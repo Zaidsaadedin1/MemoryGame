@@ -1,0 +1,161 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif; 
+    
+}
+
+
+
+
+.box .mainNavigation{
+  background: red;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+
+#mainNavigation {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(235, 238, 11);
+    width: 100vw;
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+}
+.mainNavigation button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  text-align: center;
+  font-size: large;
+  font-weight: 300;
+  color: rgb(29, 161, 93);
+
+
+}
+
+
+.modal {
+    position: fixed;
+    z-index: 100;
+    background: white;
+    border-radius: 10px;
+    width: 80%;
+    top: 30vh;
+    left: 10%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    display: none;
+    
+  }
+
+  .modal.visible {
+    display: block;
+    animation: fade-slide-in 0.3s ease-out forwards;
+  }
+
+  .modal_content {
+    width: 200;
+    margin: 10px;
+    height:auto;
+    border: 3px solid black;
+    border-radius: 0px;
+    padding: 20px 15px;
+    margin-top: 20px;
+    margin-left: 20pt;
+    margin-right: 20pt;
+    text-align: LEFT;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .modal_content label{
+    padding: 10px;
+  }
+  .modal_content button{
+    padding: 10px;
+    margin: 10px;
+  }
+ 
+
+
+
+.box .cardBox {
+  background: rgba(15, 205, 40, 0.551);
+  width: 50vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-left: 25%;
+  margin-top: 10%;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  position: relative; /* Change to relative to allow cards to stack */
+  width: 6vw;
+  height: 10vh;
+  margin: 10px;
+  background-color: #bec8b8;
+  margin-right: 10px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+}
+
+.card.flipped {
+  transform: rotateY(0deg); /* Flip the card back to the front */
+}
+
+.card .cardFront,
+.card .cardBack {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  width: 100%; /* Make sure front and back cover the whole card */
+  height: 100%;
+}
+
+.cardFront {
+  background-color: #bbb;
+  color: black;
+ 
+}
+
+.cardFront img{
+  max-width: 100%;
+}
+
+.cardBack {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardBack h1 {
+  text-align: center;
+  font-size: medium;
+}
