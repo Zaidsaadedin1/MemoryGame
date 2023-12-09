@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <script src="./index.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="./index.css"
+    />
+  </head>
+  <body>
+    <div class="box">
+      <header class="mainNavigation" id="mainNavigation">
+        <h1>Memory Game</h1>
+        <button id="settingsBtn" title="Settings"type="button" value="Show">Settings</button>
+        <button id="timerBtn" title="Timer"type="button" value="Show">Timer</button>
+        <button id="chancesLeft" title="ChancesLeft" type="button" value="Show">Chances Left</button>
+        <button id="matchedPairs" title="matchedPairs" type="button" value="Show">matched Pairs</button>
+
+      </header>
+
+      <div id="backdrop"></div>
+      <div class="modal" id="settings-modal">
+        <div class="modal_content">
+          <label for="title">Number of cards</label>
+          <select type="number" name="NumberOfCards" id="NumberOfCards">
+            <option value="2">2</option>
+            <option value="4">4</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="10">10</option>
+            <option value="12">12</option>
+            <option value="14">14</option>
+          </select>
+
+          <label for="image-url">timer</label>
+          <select type="number" name="timer" id="timer">
+            <option value="10">10 seconds</option>
+            <option value="20">20 seconds</option>
+            <option value="30">30 seconds</option>
+            <option value="60">1 minute</option>
+            <option value="120">2 minutes</option>
+            <option value="180">3 minutes</option>
+            <option value="240">4 minutes</option>
+          </select>
+
+          <label for="rating">chances</label>
+          <select type="number" name="chances" id="chances">
+            <option value="2">2</option>
+            <option value="4">4</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="10">10</option>
+            <option value="12">12</option>
+            <option value="14">14</option>
+          </select>
+
+          <button id="rulesBtn">Set Rules</button>
+          <button id="cancelBtn">cancel</button>
+        </div>
+      </div>
+
+      <div class="cardBox" id="cardBox">
+
+
+
+      </div>
+    </div>
+  </body>
+</html>
