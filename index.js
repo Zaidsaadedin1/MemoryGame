@@ -163,40 +163,40 @@ const images = [
   }
   
   function handleClickedCardsResult(firstCardId, secondCardId) {
-    console.log(`${firstCardId}`);
-    console.log(`${secondCardId}`);
     const card1 = document.querySelector(`[data-id="${firstCardId}"]`);
     const card2 = document.querySelector(`[data-id="${secondCardId}"]`);
   
-    if (Math.abs(firstCardId) != Math.abs(secondCardId)) {
-      // Cards don't match
-      firstCardIndex = null;
-      secondCardIndex = null;
-      chancesBtn.innerText =
-        chancesInput.innerText = parseInt(chancesInput.innerText) - 1;
-      console.log("Wrong guess");
-      card1.classList.toggle("flipped");
-      card2.classList.toggle("flipped");
-      if (parseInt(chancesBtn.innerText) === 0) {
-        alert("Game Over! You ran out of chances.");
-        saveGameStatus("lose");
-        restartGame();
+    if (card1 && card2) {
+      if (Math.abs(firstCardId) != Math.abs(secondCardId)) {
+        // Cards don't match
+        firstCardIndex = null;
+        secondCardIndex = null;
+        chancesBtn.innerText = parseInt(chancesBtn.innerText) -1;
+        console.log("Wrong guess");
+        card1.classList.toggle("flipped");
+        card2.classList.toggle("flipped");
+        if (parseInt(chancesBtn.innerText) === 0) {
+          alert("Game Over! You ran out of chances.");
+          saveGameStatus("lose");
+          restartGame();
+        }
+      } else {
+        // Cards match
+        cardsBox.removeChild(card1);
+        cardsBox.removeChild(card2);
+        console.log("Correct guess");
+        matchedPairs.innerText = parseInt(matchedPairs.innerText) + 1;
+        if (parseInt(matchedPairs.innerText) == numberOfCards) {
+          alert("Congratulations! You matched all pairs!");
+          saveGameStatus("win");
+          restartGame();
+        }
+        firstCardIndex = null;
+        secondCardIndex = null;
       }
-    } else {
-      // Cards match
-      cardsBox.removeChild(card1);
-      cardsBox.removeChild(card2);
-      console.log("Correct guess");
-      matchedPairs.innerText = parseInt(matchedPairs.innerText) + 1;
-      if (parseInt(matchedPairs.innerText) == numberOfCards) {
-        alert("Congratulations! You matched all pairs!");
-        saveGameStatus("win");
-        restartGame();
-      }
-      firstCardIndex = null;
-      secondCardIndex = null;
     }
   }
+  
   
   // Function to shuffle an array
   function shuffleArray(array) {
